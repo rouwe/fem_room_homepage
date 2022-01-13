@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Rouwe">
+  <meta name="author" content="Roweme">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Room homepage</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <!-- Main -->
@@ -48,9 +43,15 @@
       <p class="hero-subheading">
         We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
       </p>
-      <a class="btn-cta btn" href="#" target="_blank">Shop now</a>
+      <a class="btn-cta btn" href="#" target="_blank">Shop now
+        <span class="cta-arrow-container">
+          <svg class="cta-arrow" width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill="#000" fill-rule="nonzero"/>
+          </svg>
+        </span>
+      </a>
     </section>
-    
+    <!-- Hero Slider -->
     <div id="hero-slider" class="hero-slider-container">
       <div class="slider-control">
         <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"/>
@@ -76,7 +77,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Roweme</a>.
   </div>
   <!-- We are available all across the globe
 
