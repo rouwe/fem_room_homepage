@@ -1,0 +1,104 @@
+:root {
+    font-size: 12px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    /* position: absolute; */
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+}
+img {
+    width: 100%;
+}
+/* Main */
+main.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "hero-img"
+        "hero-copy"
+        "dark"
+        "about"
+        "light";
+    position: relative;
+}
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 4em 2em;
+}
+.logo-container {
+    width: 60%;
+    padding-left: 0.2em;
+}
+.open-menu {
+    width: 20%;
+}
+.nav-container {
+    position: fixed;
+    transform: translateY(-200%);
+}
+
+/* Hero */
+
+/* Slider */
+.hero-slider-container {
+    width: 100%;
+    height: 60vh; 
+    grid-area: hero-img;
+}
+#hero-slider {
+    position: relative;
+    top: 0;
+    background: url("../images/mobile-image-hero-1.jpg");
+    background-size: contain;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: -1;
+}
+.slider-control {
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    display: inline-block;
+    background-color: hsl(0, 100%, 0%);
+}
+.left-arrow, .right-arrow {
+    width: 14px;
+    height: 24px;
+    margin: 1.15em 0;
+    stroke-width: 1.5px;
+    transform: scale(0.7);
+}
+.left-arrow {
+    margin-left: 1.85em;
+    margin-right: 1.5em;
+}
+.right-arrow {
+    margin-left: 1.5em;
+    margin-right: 1.85em;
+}
+.hero-box {
+    grid-area: hero-copy;
+}
+.dark-container {
+    grid-area: dark;
+}
+.about-text {
+    grid-area: about;
+}
+.light-container {
+    grid-area: light;
+}
