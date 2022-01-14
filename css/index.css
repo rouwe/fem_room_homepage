@@ -6,7 +6,6 @@
 }
 body {
     /* position: absolute; */
-    
     margin: 0;
     padding: 0;
     font-size: 100%;
@@ -22,7 +21,7 @@ a {
 main.container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, minmax());
+    grid-template-rows: repeat(5, fit-content(100%));
     grid-template-areas:
         "hero-img"
         "hero-copy"
@@ -42,6 +41,7 @@ header {
     align-items: flex-start;
     width: 100%;
     padding: 4rem 2rem;
+    z-index: 4;
 }
 .logo-container {
     width: 60%;
@@ -51,22 +51,70 @@ header {
     width: 20%;
 }
 .nav-container {
+    width: 100%;
+    height: fit-content;
     position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 2rem;
+    margin-right: -2rem;
+    transition: transform 0.3s ease-out;
     transform: translateY(-200%);
+    background-color:hsl(0, 0%, 100%);
+    z-index: 2;
+}
+.close-menu {
+    align-self: center;
+    margin: 2rem 0;
+    margin-right: auto;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-right: -0.85rem;
+    padding: 0;
+}
+.nav-menu li {
+    margin: 0 1.2rem;
+}
+.nav-menu span {
+    position: relative;
+    top: 1px;
+}
+.nav-menu a {
+    font-size: 1rem;
+    text-transform: lowercase;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: hsl(0, 100%, 0%);
+}
+#menu-active-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: hsla(0, 0%, 0%, 0.502);
+    z-index: 3;
 }
 /* Hero */
 .hero-box, section {
     padding: 4rem 2.65rem;
 }
 .hero-heading {
+    width: fit-content;
     font-size: 2.3rem;
     letter-spacing: -1px;
-    text-shadow: 0 0 black;
+    text-shadow: 0 0 hsl(0, 0%, 0%);
     line-height: 2.6rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
 .hero-subheading {
+    width: fit-content;
     font-size: 1rem;
     letter-spacing: -0.3px;
     line-height: 1.65rem;
@@ -140,6 +188,7 @@ header {
 }
 /* About */
 .about-heading {
+    width: fit-content;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 5px;
@@ -147,6 +196,7 @@ header {
     text-transform: uppercase;
 }
 .about-subheading {
+    width: fit-content;
     font-size: 1rem;
     line-height: 1.65rem;
     font-kerning: none;
@@ -160,8 +210,8 @@ header {
     text-align: center;
     padding: 1rem;
     color:hsl(0, 0%, 100%);
-    background-color: #242623;
+    background-color: hsl(100, 4%, 14%);
 }
 .attribution a {
-    color: #abca8f; 
+    color: hsl(92, 36%, 68%); 
 }
