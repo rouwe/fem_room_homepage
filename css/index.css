@@ -154,12 +154,13 @@ header {
 }
 .slider-control {
     position: absolute;
-    bottom: 2px;
+    bottom: 0;
     right: 0;
-    display: inline-block;
+    display: flex;
     background-color: hsl(0, 100%, 0%);
 }
 .left-arrow, .right-arrow {
+    display: block;
     width: 14px;
     height: 24px;
     margin: 1.15rem 0;
