@@ -1,5 +1,5 @@
 :root {
-    font-size: 12px;
+    font-size: 12px;    
 }
 * {
     box-sizing: border-box;
@@ -119,7 +119,7 @@ header {
     letter-spacing: -0.3px;
     line-height: 1.65rem;
     vertical-align: super;
-    color: hsl(0, 0%, 63%);
+    color: hsl(0, 0%, 70%);
 }
 .btn {
     color: hsl(0, 100%, 0%);
@@ -202,7 +202,7 @@ header {
     font-kerning: none;
     word-spacing: -1px;
     letter-spacing: -0.1px;
-    color:hsl(0, 0%, 63%);
+    color:hsl(0, 0%, 70%);
 }
 /* Attribution */
 .attribution {
@@ -275,17 +275,43 @@ header {
     .hero-heading, .hero-subheading {
         padding-right: 2.5rem;   
     }
+    .btn-cta {
+        display: flex;
+        margin: 2.5rem 1rem 2.5rem 0;
+    }
+    .cta-arrow-container {
+        display: flex;
+        align-self: flex-end;
+        margin-left: 2.75rem;
+    }
     /* Slider */
     #hero-slider {
         width: 100%;
         height: auto;
         background: url("../images/desktop-image-hero-1.jpg");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: unset 100%;
     }
     .slider-control {
-        transform: scale(1.5);
-        right: -8.82rem;
-        bottom: 1.1rem;
+        right: -10.9rem;
+    }
+    .left-arrow path, .right-arrow path {
+        stroke:hsl(0, 0%, 63%);
+    }
+    .left-arrow-container, .right-arrow-container {
+        padding: 15px 13px;
+    }
+    .left-arrow-container:hover, .right-arrow-container:hover {
+        background-color: rgb(106, 105, 105);
+    }
+    /* About */
+    .about-text-container {
+        margin: 2rem 1.3rem;
+    }
+    .about-subheading {
+        letter-spacing: -0.3px;
+        word-spacing: 0.2px;
+        font-kerning: auto;
+        margin: 1.1rem 0;
     }
 }
