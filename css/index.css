@@ -146,7 +146,7 @@ header {
     position: relative;
     top: 0;
     background: url("../images/mobile-image-hero-1.jpg");
-    background-size: contain;
+    background-size: 100% 100%;
     background-clip: content-box;
     background-repeat: no-repeat;
     background-position: top;
@@ -154,7 +154,7 @@ header {
 }
 .slider-control {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
     display: flex;
     background-color: hsl(0, 100%, 0%);
@@ -165,7 +165,6 @@ header {
     height: 24px;
     margin: 1.15rem 0;
     stroke-width: 1.5px;
-    transform: scale(0.7);
 }
 .left-arrow {
     margin-left: 1.85rem;
@@ -215,4 +214,52 @@ header {
 }
 .attribution a {
     color: hsl(92, 36%, 68%); 
+}
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    /* Main */
+    main.container {
+        grid-template-columns: repeat(2, 1fr) 0.75fr 0.05fr repeat(3, 1fr) 0.85fr 0.20fr 0.75fr repeat(2, 1fr);
+        grid-template-rows: repeat(3, 0.982fr);
+        grid-template-areas:
+        "hero-img hero-img hero-img hero-img hero-img hero-img hero-img hero-copy hero-copy hero-copy hero-copy hero-copy"
+        "hero-img hero-img hero-img hero-img hero-img hero-img hero-img hero-copy hero-copy hero-copy hero-copy hero-copy"
+        "dark dark dark dark about about about about light light light light";
+    }
+    /* Header */
+    header {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 5.3rem 5.1rem;
+    }
+    .logo-container, .open-menu {
+        width: unset;
+    }
+    .nav-container {
+        width: min-content;
+        position: static;
+        top: unset;
+        left: unset;
+        padding: 0;
+        margin-left: 3.4rem;
+        transform: none;
+        transition: none;
+        background-color: unset;
+    }
+    .close-menu, .open-menu {
+        display: none;
+    }
+    .nav-menu {
+        margin: 0;
+    }
+    .nav-menu li {
+        padding-bottom: 10px;
+        margin: 0 1.3rem;
+    }
+    .nav-menu a {
+        font-weight: 500;
+        letter-spacing: -0.4px;
+        color: hsl(0, 0%, 100%);
+    }
+
 }
