@@ -261,5 +261,31 @@ header {
         letter-spacing: -0.4px;
         color: hsl(0, 0%, 100%);
     }
-
+    /* Hero */
+    .hero-box {
+        padding: 7.4rem 5.8rem;
+    }
+    .hero-heading {
+        font-size: 3.2rem;
+        font-weight: 600;
+        text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.589);
+        line-height: unset;
+        margin: 2.5rem 0 2.3rem;
+    }
+    .hero-heading, .hero-subheading {
+        padding-right: 2.5rem;   
+    }
+    /* Slider */
+    #hero-slider {
+        width: 100%;
+        height: auto;
+        background: url("../images/desktop-image-hero-1.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .slider-control {
+        transform: scale(1.5);
+        right: -8.82rem;
+        bottom: 1.1rem;
+    }
 }
