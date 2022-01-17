@@ -118,7 +118,6 @@ header {
     font-size: 1rem;
     letter-spacing: -0.3px;
     line-height: 1.65rem;
-    vertical-align: super;
     color: hsl(0, 0%, 70%);
 }
 .btn {
@@ -213,14 +212,14 @@ header {
     background-color: hsl(100, 4%, 14%);
 }
 .attribution a {
-    color: hsl(92, 36%, 68%); 
+    color: hsl(30deg 51% 67%); 
 }
 /* Desktop */
 @media screen and (min-width: 1024px) {
     /* Main */
     main.container {
-        grid-template-columns: repeat(2, 1fr) 0.75fr 0.05fr repeat(3, 1fr) 0.85fr 0.20fr 0.75fr repeat(2, 1fr);
-        grid-template-rows: repeat(3, 0.982fr);
+        grid-template-columns: repeat(2, 1fr) 0.75fr 0.05fr repeat(2, 1fr) 0.8fr 1.05fr 0.20fr 0.75fr repeat(2, 1fr);
+        grid-template-rows: repeat(3, 0.9835fr);
         grid-template-areas:
         "hero-img hero-img hero-img hero-img hero-img hero-img hero-img hero-copy hero-copy hero-copy hero-copy hero-copy"
         "hero-img hero-img hero-img hero-img hero-img hero-img hero-img hero-copy hero-copy hero-copy hero-copy hero-copy"
@@ -253,24 +252,36 @@ header {
         margin: 0;
     }
     .nav-menu li {
+        position: relative;
+        top: -2px;
         padding-bottom: 10px;
-        margin: 0 1.3rem;
+        margin: 0 1.33rem;
     }
     .nav-menu a {
         font-weight: 500;
         letter-spacing: -0.4px;
         color: hsl(0, 0%, 100%);
     }
+    .nav-menu a::after {
+        content: '';
+        display: block;
+        padding-bottom: 5px;
+        border-bottom: 2px solid hsl(0, 0%, 100%);
+        transform: scaleX(0);
+        transition: transform 225ms ease-in-out;  
+    }
+    .nav-menu a:hover:after { transform: scaleX(1); }
     /* Hero */
     .hero-box {
-        padding: 7.4rem 5.8rem;
+        padding: 7.4rem 5.8rem 0 8.3rem;
     }
     .hero-heading {
-        font-size: 3.2rem;
+        font-size: 3.3rem;
         font-weight: 600;
         text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.589);
-        line-height: unset;
-        margin: 2.5rem 0 2.3rem;
+        line-height: 3.6rem;
+        letter-spacing: -1px;
+        margin: 2.4rem 0 2.3rem;
     }
     .hero-heading, .hero-subheading {
         padding-right: 2.5rem;   
@@ -278,6 +289,11 @@ header {
     .btn-cta {
         display: flex;
         margin: 2.5rem 1rem 2.5rem 0;
+        transition: all 100ms ease-in-out;
+    }
+    .btn-cta:hover {
+        stroke: hsl(0, 0%, 65%);
+        color: hsl(0, 0%, 65%);
     }
     .cta-arrow-container {
         display: flex;
@@ -293,16 +309,17 @@ header {
         background-size: unset 100%;
     }
     .slider-control {
-        right: -10.9rem;
+        right: -13.4rem;
     }
     .left-arrow path, .right-arrow path {
         stroke:hsl(0, 0%, 63%);
     }
     .left-arrow-container, .right-arrow-container {
         padding: 15px 13px;
+        cursor: pointer;
     }
     .left-arrow-container:hover, .right-arrow-container:hover {
-        background-color: rgb(106, 105, 105);
+        background-color: hsl(0, 0%, 26%);
     }
     /* About */
     .about-text-container {

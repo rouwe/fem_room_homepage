@@ -29,14 +29,24 @@ function closeNav() {
  :target sliderSrc: Object - contains image path
  :target trackSlider: Numbeer - serves as a tracker and a key to access image path
 */
-const sliderSrc = {
+const mobileSliderSrc = {
     1: 'mobile-image-hero-1',
     2: 'mobile-image-hero-2',
     3: 'mobile-image-hero-3'
 }
+const desktopSliderSrc = {
+    1: 'desktop-image-hero-1',
+    2: 'desktop-image-hero-2',
+    3: 'desktop-image-hero-3'
+}
+let sliderSrc = {
+    1: mobileSliderSrc[1],
+    2: mobileSliderSrc[2],
+    3: mobileSliderSrc[3]
+}
 const heroSlider = document.getElementById('hero-slider');
-const leftArrow = document.getElementsByClassName('left-arrow')[0];
-const rightArrow = document.getElementsByClassName('right-arrow')[0];
+const leftArrow = document.getElementsByClassName('left-arrow-container')[0];
+const rightArrow = document.getElementsByClassName('right-arrow-container')[0];
 leftArrow.addEventListener('click', prevSlide);
 rightArrow.addEventListener('click', nextSlide);
 
@@ -59,23 +69,45 @@ const sliderSubHeadingSrc = {
 const heroHeading = document.getElementsByClassName('hero-heading')[0];
 const heroSubHeading = document.getElementsByClassName('hero-subheading')[0];
 
+function checkScreenWidth(width) {
+    return (width < 768) ? 'Mobile'
+    : (width < 1024) ? 'Tablet'
+    : 'Desktop';
+}
+
 let trackSlider = 1;
 function prevSlide() {
-    // Show previous image
+    // Show previous image and text
+    const screenWidth = window.innerWidth;
+    const checkScreen = checkScreenWidth(screenWidth);
+    if (checkScreen == 'Desktop' || checkScreen == 'Tablet') {
+        // Change the image depending on the screen width
+        sliderSrc = desktopSliderSrc;
+    } else {
+        sliderSrc = mobileSliderSrc;
+    }
     if (trackSlider <= 1) {
-        heroSlider.style.background = `url(images/${sliderSrc[3]}.jpg)`;
+        heroSlider.style.background = `url(../images/${sliderSrc[3]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[3];
         heroSubHeading.textContent = sliderSubHeadingSrc[3];
         trackSlider = 3;
     } else {
-        heroSlider.style.background = `url(images/${sliderSrc[trackSlider - 1]}.jpg)`;
+        heroSlider.style.background = `url(../images/${sliderSrc[trackSlider - 1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[trackSlider - 1];
         heroSubHeading.textContent = sliderSubHeadingSrc[trackSlider - 1];
         trackSlider = trackSlider - 1;
     }
 }
 function nextSlide() {
-    // Show next image
+    // Show next image and text
+    const screenWidth = window.innerWidth;
+    const checkScreen = checkScreenWidth(screenWidth);
+    if (checkScreen == 'Desktop' || checkScreen == 'Tablet') {
+        // Change the image depending on the screen width
+        sliderSrc = desktopSliderSrc;
+    } else {
+        sliderSrc = mobileSliderSrc;
+    }
     if (trackSlider >= 3) {
         heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[1];
