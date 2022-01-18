@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    /* position: absolute; */
+    position: absolute;
     margin: 0;
     padding: 0;
     font-size: 100%;
@@ -306,7 +306,7 @@ header {
         height: auto;
         background: url("../images/desktop-image-hero-1.jpg");
         background-repeat: no-repeat;
-        background-size: unset 100%;
+        background-size: auto 100%;
     }
     .slider-control {
         right: -13.4rem;

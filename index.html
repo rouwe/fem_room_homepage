@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="reinitSliderSrc()" onresize="sliderRespondResize()">
   <!-- Main -->
   <div id="menu-active-bg"></div>
   <main class="container">
@@ -53,11 +53,11 @@
     <!-- Hero Slider -->
     <div id="hero-slider" class="hero-slider-container">
       <div class="slider-control">
-        <span class="left-arrow-container">
+        <span class="left-arrow-container" role="button">
           <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"/>
           </svg>
         </span>
-        <span class="right-arrow-container">
+        <span class="right-arrow-container" role="button">
           <svg class="right-arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"/>
           </svg>
         </span>
@@ -79,12 +79,13 @@
       <img class="light" src="images/image-about-light.jpg" alt="">
     </div>
   </main>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Roweme</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/rouwe" target="_blank">Roweme</a>.
+    </div>
+  </footer>
   
-  <script src="/js/index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

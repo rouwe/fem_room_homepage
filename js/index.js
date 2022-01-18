@@ -5,7 +5,6 @@ const menuBg = document.getElementById('menu-active-bg');
 openMenu.addEventListener('click', openNav);
 closeMenu.addEventListener('click', closeNav);
 menuBg.addEventListener('click', closeNav)
-
 /* Controls the mobile navigation
  :target nav-container: <nav> - contains navigation items
  :target main: <main> - background to be added when nav is active
@@ -21,7 +20,6 @@ function closeNav() {
     navContainer.style.transform = 'translateY(-200%)';
     menuBg.style.display = 'none';
 }
-
 /* Slider
  :target left-arrow: <svg> - click to see previous image
  :target right-arrow: <svg> - click to see next image
@@ -70,23 +68,34 @@ const heroHeading = document.getElementsByClassName('hero-heading')[0];
 const heroSubHeading = document.getElementsByClassName('hero-subheading')[0];
 
 function checkScreenWidth(width) {
+    // Check client device depending on the viewport
     return (width < 768) ? 'Mobile'
     : (width < 1024) ? 'Tablet'
     : 'Desktop';
 }
-
+function modifySliderSrc(checkScreen) {
+    if (checkScreen == 'Desktop' || checkScreen == 'Tablet') {
+        // Change the image source depending on the screen width
+        sliderSrc = desktopSliderSrc;
+    } else {
+        sliderSrc = mobileSliderSrc;
+    }
+}
+function modifiedSliderAddStyle(heroSlider) {
+    // Re-initialize slider image style
+    heroSlider.style.backgroundSize = '100% 100%';
+    heroSlider.style.backgroundClip = 'content-box'
+    heroSlider.style.backgroundRepeat = 'no-repeat';
+    heroSlider.style.backgroundPosition = 'top';
+}
 let trackSlider = 1;
 function prevSlide() {
     // Show previous image and text
     const screenWidth = window.innerWidth;
     const checkScreen = checkScreenWidth(screenWidth);
-    if (checkScreen == 'Desktop' || checkScreen == 'Tablet') {
-        // Change the image depending on the screen width
-        sliderSrc = desktopSliderSrc;
-    } else {
-        sliderSrc = mobileSliderSrc;
-    }
+    modifySliderSrc(checkScreen);
     if (trackSlider <= 1) {
+        console.log(heroSlider)
         heroSlider.style.background = `url(../images/${sliderSrc[3]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[3];
         heroSubHeading.textContent = sliderSubHeadingSrc[3];
@@ -97,17 +106,13 @@ function prevSlide() {
         heroSubHeading.textContent = sliderSubHeadingSrc[trackSlider - 1];
         trackSlider = trackSlider - 1;
     }
+    modifiedSliderAddStyle(heroSlider); // Additional style for slider image
 }
 function nextSlide() {
     // Show next image and text
     const screenWidth = window.innerWidth;
     const checkScreen = checkScreenWidth(screenWidth);
-    if (checkScreen == 'Desktop' || checkScreen == 'Tablet') {
-        // Change the image depending on the screen width
-        sliderSrc = desktopSliderSrc;
-    } else {
-        sliderSrc = mobileSliderSrc;
-    }
+    modifySliderSrc(checkScreen);
     if (trackSlider >= 3) {
         heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[1];
@@ -119,4 +124,22 @@ function nextSlide() {
         heroSubHeading.textContent = sliderSubHeadingSrc[trackSlider + 1];
         trackSlider = trackSlider + 1;
     }
+    modifiedSliderAddStyle(heroSlider); // Additional style for slider image
+}
+function checkScreenOnLoad() {
+    // Check screen size on load
+    const onLoadScreenWidth = window.innerWidth;
+    const device = checkScreenWidth(onLoadScreenWidth);
+    return device;
+}
+function reinitSliderSrc() {
+    // Change image source to use depending on load screen width
+    const screenWidth = checkScreenOnLoad();
+    modifySliderSrc(screenWidth);
+    heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;   
+    modifiedSliderAddStyle(heroSlider); // Additional style for slider image
+}
+function sliderRespondResize() {
+    // Change the image source of slider to use upon screen resize
+    reinitSliderSrc();
 }
