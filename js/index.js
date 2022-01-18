@@ -95,7 +95,6 @@ function prevSlide() {
     const checkScreen = checkScreenWidth(screenWidth);
     modifySliderSrc(checkScreen);
     if (trackSlider <= 1) {
-        console.log(heroSlider)
         heroSlider.style.background = `url(../images/${sliderSrc[3]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[3];
         heroSubHeading.textContent = sliderSubHeadingSrc[3];
