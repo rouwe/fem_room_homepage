@@ -138,7 +138,7 @@ function reinitSliderSrc() {
 <<<<<<< HEAD
     heroSlider.style.background = `url(room_homepage/images/${sliderSrc[1]}.jpg)`;   
 =======
-    heroSlider.style.background = `url(https://github.com/rouwe/room_homepage/blob/main/images/${sliderSrc[1]}.jpg)`;   
+    heroSlider.style.background = `url(room_homepage/blob/main/images/${sliderSrc[1]}.jpg)`;   
 >>>>>>> 828a3a2cb53e5f2d2896230e33fe37658a183544
     modifiedSliderAddStyle(heroSlider); // Additional style for slider image
 }
