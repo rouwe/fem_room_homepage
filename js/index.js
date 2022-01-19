@@ -95,12 +95,12 @@ function prevSlide() {
     const checkScreen = checkScreenWidth(screenWidth);
     modifySliderSrc(checkScreen);
     if (trackSlider <= 1) {
-        heroSlider.style.background = `url(../images/${sliderSrc[3]}.jpg)`;
+        heroSlider.style.background = `url(room_homepage/images/${sliderSrc[3]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[3];
         heroSubHeading.textContent = sliderSubHeadingSrc[3];
         trackSlider = 3;
     } else {
-        heroSlider.style.background = `url(../images/${sliderSrc[trackSlider - 1]}.jpg)`;
+        heroSlider.style.background = `url(room_homepage/images/${sliderSrc[trackSlider - 1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[trackSlider - 1];
         heroSubHeading.textContent = sliderSubHeadingSrc[trackSlider - 1];
         trackSlider = trackSlider - 1;
@@ -113,12 +113,12 @@ function nextSlide() {
     const checkScreen = checkScreenWidth(screenWidth);
     modifySliderSrc(checkScreen);
     if (trackSlider >= 3) {
-        heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;
+        heroSlider.style.background = `url(room_homepage/images/${sliderSrc[1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[1];
         heroSubHeading.textContent = sliderSubHeadingSrc[1];
         trackSlider = 1;
     } else {
-        heroSlider.style.background = `url(../images/${sliderSrc[trackSlider + 1]}.jpg)`;
+        heroSlider.style.background = `url(room_homepage/images/${sliderSrc[trackSlider + 1]}.jpg)`;
         heroHeading.textContent = sliderHeadingSrc[trackSlider + 1];
         heroSubHeading.textContent = sliderSubHeadingSrc[trackSlider + 1];
         trackSlider = trackSlider + 1;
@@ -135,7 +135,7 @@ function reinitSliderSrc() {
     // Change image source to use depending on load screen width
     const screenWidth = checkScreenOnLoad();
     modifySliderSrc(screenWidth);
-    heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;   
+    heroSlider.style.background = `url(room_homepage/images/${sliderSrc[1]}.jpg)`;   
     modifiedSliderAddStyle(heroSlider); // Additional style for slider image
 }
 function sliderRespondResize() {
