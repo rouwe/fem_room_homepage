@@ -135,7 +135,7 @@ function reinitSliderSrc() {
     // Change image source to use depending on load screen width
     const screenWidth = checkScreenOnLoad();
     modifySliderSrc(screenWidth);
-    heroSlider.style.background = `url(../images/${sliderSrc[1]}.jpg)`;   
+    heroSlider.style.background = `url(/images/${sliderSrc[1]}.jpg)`;   
     modifiedSliderAddStyle(heroSlider); // Additional style for slider image
 }
 function sliderRespondResize() {
