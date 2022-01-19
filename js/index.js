@@ -47,7 +47,19 @@ const leftArrow = document.getElementsByClassName('left-arrow-container')[0];
 const rightArrow = document.getElementsByClassName('right-arrow-container')[0];
 leftArrow.addEventListener('click', prevSlide);
 rightArrow.addEventListener('click', nextSlide);
-
+// Keyboard arrow press event
+document.onkeydown = checkKey;
+function checkKey(e) {
+    e = e || window.onkeydown;
+    if (e.keyCode == '37') {
+       // left arrow
+       prevSlide();
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       nextSlide();
+    }
+}
 /* Hero text slider
  :target hero-heading: <h1> - heading to change
  :target hero-subheading: <p> - paragraph to change
