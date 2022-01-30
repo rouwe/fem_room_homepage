@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Go to frontendmentor.io](https://www.frontendmentor.io/solutions/room-homepage-using-grid-and-flexbox-UoJQphNfJ)
-- Live Site URL: [View live site](https://rouwe.github.io/room_homepage/)
+- Live Site URL: [View live site](https://rouwe.github.io/fem_room_homepage/)
 
 ## My process
 
